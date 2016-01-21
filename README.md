@@ -1,12 +1,16 @@
-lemonphp/event
+Package lemonphp/event
 ===
+[![Build Status](https://travis-ci.org/lemonphp/event.svg?branch=master)](https://travis-ci.org/lemonphp/event)
+[![Coverage Status](https://coveralls.io/repos/github/lemonphp/event/badge.svg?branch=master)](https://coveralls.io/github/lemonphp/event?branch=master)
+
 A simple event dispatcher
 
 Usage
 ---
+
 ```
-use Lemonphp\Event\Event;
-use Lemonphp\Event\Dispatcher;
+use Lemon\Event\Event;
+use Lemon\Event\Dispatcher;
 
 $dispatcher = new Dispatcher();
 

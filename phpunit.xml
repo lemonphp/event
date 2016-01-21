@@ -19,15 +19,18 @@
     <!-- Add any additional test suites you want to run here -->
     <testsuites>
         <testsuite name="Test Source">
-            <directory>./tests</directory>
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
 
     <!-- Ignore vendor tests in code coverage reports -->
     <filter>
         <blacklist>
-            <directory suffix=".php">./vendor/</directory>
-            <directory>bin/</directory>
+            <directory suffix=".php">vendor</directory>
+            <directory>bin</directory>
         </blacklist>
+        <whitelist>
+            <directory suffix=".php">src</directory>
+        </whitelist>
     </filter>
 </phpunit>

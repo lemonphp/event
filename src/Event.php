@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of `lemon/event` project.
+ *
+ * (c) 2015-2016 LemonPHP Team
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Lemon\Event;
 
 class Event
@@ -7,7 +16,7 @@ class Event
     /**
      * @var string Read only property
      */
-    protected $name;
+    protected $eventName;
 
     /**
      * @var bool Whether no further event listeners should be triggered
@@ -19,7 +28,7 @@ class Event
      */
     public function __construct($name)
     {
-        $this->name = (string) $name;
+        $this->eventName = (string) $name;
     }
 
     /**
@@ -48,8 +57,8 @@ class Event
     /**
      * @return string
      */
-    public function getName()
+    public function getEventName()
     {
-        return $this->name;
+        return $this->eventName;
     }
 }

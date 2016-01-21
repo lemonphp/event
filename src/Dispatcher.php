@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of `lemon/event` project.
+ *
+ * (c) 2015-2016 LemonPHP Team
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Lemon\Event;
 
 class Dispatcher implements DispatcherInterface
@@ -17,14 +26,14 @@ class Dispatcher implements DispatcherInterface
     /**
      * {@inheritdoc}
      */
-    public function trigger($eventName, Event $event = null)
+    public function trigger($event)
     {
-        if (null === $event) {
-            $event = new Event($eventName);
+        if (!($event instanceof Event)) {
+            $event = new Event($event);
         }
 
-        if ($listeners = $this->getListeners($eventName)) {
-            $this->doDispatch($listeners, $eventName, $event);
+        if ($listeners = $this->getListeners($event->getEventName())) {
+            $this->doDispatch($listeners, $event);
         }
 
         return $event;
@@ -45,6 +54,11 @@ class Dispatcher implements DispatcherInterface
     public function off($eventName, $listener = null)
     {
         if (!isset($this->listeners[$eventName])) {
+            return;
+        }
+
+        if (is_null($listener)) {
+            unset($this->listeners[$eventName], $this->sorted[$eventName]);
             return;
         }
 
@@ -119,13 +133,12 @@ class Dispatcher implements DispatcherInterface
      * for each listener.
      *
      * @param callable[] $listeners The event listeners.
-     * @param string     $eventName The name of the event to dispatch.
      * @param Event      $event     The event object to pass to the event handlers/listeners.
      */
-    protected function doDispatch($listeners, $eventName, Event $event)
+    protected function doDispatch($listeners, Event $event)
     {
         foreach ($listeners as $listener) {
-            call_user_func($listener, $event, $eventName, $this);
+            call_user_func($listener, $event);
             if ($event->isPropagationStopped()) {
                 break;
             }

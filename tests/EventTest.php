@@ -1,6 +1,15 @@
 <?php
 
-namespace Lemon\Event\Test;
+/*
+ * This file is part of `lemon/event` project.
+ *
+ * (c) 2015-2016 LemonPHP Team
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
+namespace Lemon\Event\Tests;
 
 use Lemon\Event\Event;
 
@@ -32,19 +41,28 @@ class EventTest extends \PHPUnit_Framework_TestCase
         $this->event = null;
     }
 
+    /**
+     * Test Event::isPropagationStopped() method
+     */
     public function testIsPropagationStopped()
     {
         $this->assertFalse($this->event->isPropagationStopped());
     }
 
+    /**
+     * Test Event::stopPropagation() method
+     */
     public function testStopPropagationAndIsPropagationStopped()
     {
         $this->event->stopPropagation();
         $this->assertTrue($this->event->isPropagationStopped());
     }
 
-    public function testGetName()
+    /**
+     * Test Event::getEventName() method
+     */
+    public function testGetEventName()
     {
-        $this->assertSame('event.test', $this->event->getName());
+        $this->assertSame('event.test', $this->event->getEventName());
     }
 }
