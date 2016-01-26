@@ -1,7 +1,7 @@
 <?php
 
 $header = <<<EOF
-This file is part of `lemon/event` project.
+This file is part of `lemonphp/event` project.
 
 (c) 2015-2016 LemonPHP Team
 

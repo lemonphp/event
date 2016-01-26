@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of `lemon/event` project.
+ * This file is part of `lemonphp/event` project.
  *
  * (c) 2015-2016 LemonPHP Team
  *
@@ -13,7 +13,7 @@ namespace Lemon\Event\Tests\Stub;
 
 use Lemon\Event\Event;
 
-class EventListeners
+class EventListener
 {
     public $preFooInvoked  = false;
     public $postFooInvoked = false;

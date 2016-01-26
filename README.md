@@ -10,15 +10,19 @@ Usage
 
 ```
 use Lemon\Event\Event;
-use Lemon\Event\Dispatcher;
+use Lemon\Event\EventDispatcher;
 
-$dispatcher = new Dispatcher();
+$dispatcher = new EventDispatcher();
 
-$dispatcher->on('event.name', function(Event $event) {
-    echo $event->getName() . ' is fired';
+// Add listener (listener is callable with event object as argument)
+$dispatcher->addListener('event.type', function(Event $event) {
+    echo $event->getEventType() . ' is fired';
 });
 
-$dispatcher->trigger('event.name');
+// Add subscriber (subscriber is implemented by yourself)
+$dispatcher->addSubscriber($subscriber);
+
+$dispatcher->dispatch('event.type');
 ```
 
 Changelog

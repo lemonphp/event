@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of `lemon/event` project.
+ * This file is part of `lemonphp/event` project.
  *
  * (c) 2015-2016 LemonPHP Team
  *
@@ -59,10 +59,10 @@ class EventTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test Event::getEventName() method
+     * Test Event::getEventType() method
      */
-    public function testGetEventName()
+    public function testGetEventType()
     {
-        $this->assertSame('event.test', $this->event->getEventName());
+        $this->assertSame('event.test', $this->event->getEventType());
     }
 }

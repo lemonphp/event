@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of `lemon/event` project.
+ * This file is part of `lemonphp/event` project.
  *
  * (c) 2015-2016 LemonPHP Team
  *
@@ -11,12 +11,23 @@
 
 namespace Lemon\Event;
 
+/**
+ * Event is the base class for classes containing event data.
+ *
+ * This class contains no event data. It is used by events that do not pass
+ * state information to an event handler when an event is raised.
+ *
+ * You can call the method stopPropagation() to abort the execution of
+ * further listeners in your event listener.
+ */
 class Event
 {
     /**
+     * Event type
+     *
      * @var string Read only property
      */
-    protected $eventName;
+    protected $eventType;
 
     /**
      * @var bool Whether no further event listeners should be triggered
@@ -24,11 +35,11 @@ class Event
     protected $stopped = false;
 
     /**
-     * @param string $name
+     * @param string $type
      */
-    public function __construct($name)
+    public function __construct($type)
     {
-        $this->eventName = (string) $name;
+        $this->eventType = (string) $type;
     }
 
     /**
@@ -55,10 +66,12 @@ class Event
     }
 
     /**
+     * Get event type
+     *
      * @return string
      */
-    public function getEventName()
+    public function getEventType()
     {
-        return $this->eventName;
+        return $this->eventType;
     }
 }
