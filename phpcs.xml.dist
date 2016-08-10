@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ruleset name="Lemon coding standard">
+    <description>Lemon coding standard</description>
+
+    <!-- display progress -->
+    <arg value="p"/>
+    <!-- use colors in output -->
+    <arg name="colors"/>
+
+    <!-- inherit rules from: -->
+    <rule ref="PSR2"/>
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+    <!--<rule ref="Squiz.Commenting.FileComment"/>-->
+    <rule ref="Generic.Commenting.Todo" />
+ 
+    <!-- Paths to check -->
+    <file>src</file>
+    <file>tests</file>
+</ruleset>

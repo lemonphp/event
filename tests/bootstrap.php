@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of `lemonphp/event` project.
  *
@@ -9,10 +8,7 @@
  * with this source code in the file LICENSE.
  */
 
-date_default_timezone_set('UTC');
-
-// Prevent session cookies
-ini_set('session.use_cookies', 0);
+//date_default_timezone_set('UTC');
 
 // Enable Composer autoloader
 /** @var \Composer\Autoload\ClassLoader $autoloader */

@@ -2,10 +2,29 @@ Change log
 ===
 All Notable changes to project will be documented in this file
 
-v1.0.0 - YYYY-MM-DD
+NEXT - YYYY-MM-DD
 ---
 #### Added
 - Nothing
+
+#### Deprecated
+- Nothing
+
+#### Fixed
+- Nothing
+
+#### Removed
+- Nothing
+
+v1.0.0 - 2016-08-10
+---
+#### Changed
+- Rename trait `EventDispatcherAwareTrait` to `EventDispatcherTrait`
+
+#### Added
+- Added interface `EventDispatcherAwareInterface`
+- Added trait `EventDispatcherAwareTrait`
+- Added class `ImmutableEventDispatcher`
 
 #### Deprecated
 - Nothing

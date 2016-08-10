@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of `lemonphp/event` project.
  *
@@ -19,6 +18,5 @@ namespace Lemon\Event;
  */
 class EventDispatcher implements EventDispatcherInterface
 {
-
-    use EventDispatcherAwareTrait;
+    use EventDispatcherTrait;
 }

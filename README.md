@@ -27,12 +27,24 @@ $dispatcher->dispatch('event.type');
 
 Changelog
 ---
-See [CHANGELOG.md](https://github.com/lemonphp/event/blob/master/CHANGELOG.md)
+See all change logs in [CHANGELOG.md][changelog]
 
 Contributing
 ---
-Please report any bugs or add pull requests on [Github Issues](https://github.com/lemonphp/event/issues).
+All code contributions must go through a pull request and approved by
+a core developer before being merged. This is to ensure proper review of all the code.
+
+Fork the project, create a feature branch, and send a pull request.
+
+To ensure a consistent code base, you should make sure the code follows the [PSR-2][psr2].
+
+If you would like to help take a look at the [list of issues][issues].
 
 License
 ---
-This project is released under the MIT License.
+This project is released under the MIT License.   
+Copyright © 2015-2016 LemonPHP Team.
+
+[changelog]: https://github.com/lemonphp/event/blob/master/CHANGELOG.md
+[psr2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
+[issues]: https://github.com/lemonphp/event/issues

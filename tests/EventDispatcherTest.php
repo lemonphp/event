@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of `lemonphp/event` project.
  *
@@ -189,7 +188,8 @@ class EventDispatcherTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(-10, $this->dispatcher->getListenerPriority(self::PRE_FOO, [$listener1, 'preFoo']));
         $this->assertSame(0, $this->dispatcher->getListenerPriority(self::PRE_FOO, [$listener2, 'preFoo']));
         $this->assertNull($this->dispatcher->getListenerPriority(self::PRE_BAR, [$listener1, 'preFoo']));
-        $this->assertNull($this->dispatcher->getListenerPriority(self::PRE_FOO, function() {}));
+        $this->assertNull($this->dispatcher->getListenerPriority(self::PRE_FOO, function () {
+        }));
     }
 
     public function testDispatch()
@@ -223,13 +223,13 @@ class EventDispatcherTest extends \PHPUnit_Framework_TestCase
     public function testDispatchOrderByPriority()
     {
         $invoked   = [];
-        $listener1 = function() use (&$invoked) {
+        $listener1 = function () use (&$invoked) {
             $invoked[] = 1;
         };
-        $listener2 = function() use (&$invoked) {
+        $listener2 = function () use (&$invoked) {
             $invoked[] = 2;
         };
-        $listener3 = function() use (&$invoked) {
+        $listener3 = function () use (&$invoked) {
             $invoked[] = 3;
         };
 
@@ -256,7 +256,7 @@ class EventDispatcherTest extends \PHPUnit_Framework_TestCase
     public function testListenerArgument()
     {
         $args     = [];
-        $listener = function() use (&$args) {
+        $listener = function () use (&$args) {
             $args = func_get_args();
         };
         $event = new Event(self::PRE_FOO);
