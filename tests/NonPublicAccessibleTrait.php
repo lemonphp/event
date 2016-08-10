@@ -1,4 +1,12 @@
 <?php
+/*
+ * This file is part of `lemonphp/event` project.
+ *
+ * (c) 2015-2016 LemonPHP Team
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
 
 namespace Lemon\Event\Tests;
 
@@ -56,8 +64,7 @@ trait NonPublicAccessibleTrait
      */
     protected function invokeNonPublicMethod($obj, $method, $params = [])
     {
-        if (!is_object($obj) || !is_string($method) || method_exists($obj,
-                $method)) {
+        if (!is_object($obj) || !is_string($method) || method_exists($obj, $method)) {
             throw new \InvalidArgumentException();
         }
         $ref = new \ReflectionMethod($obj, $method);
